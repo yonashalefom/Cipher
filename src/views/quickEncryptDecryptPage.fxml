@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane id="mainDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="351.0" style="-fx-background-color: white;" stylesheets="@../styles/quickEditorStyle.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.dialogs.QuickEncryptDecryptController">
+    <children>
+        <Pane prefHeight="77.0" prefWidth="351.0" style="-fx-background-color: #f1f1f1;">
+            <children>
+                <Label layoutX="33.0" layoutY="21.0" text="QUICK ENCRYPT/DECRYPT" textFill="#1457a4">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Pane layoutX="14.0" layoutY="59.0" opacity="0.13" prefHeight="1.0" prefWidth="320.0" style="-fx-background-color: #d1d1d1;" />
+            </children>
+        </Pane>
+        <Pane layoutX="16.0" layoutY="454.0" prefHeight="1.0" prefWidth="320.0" style="-fx-background-color: #f3f3f3;" />
+      <TabPane fx:id="mainTabPane" layoutY="77.0" prefHeight="432.0" prefWidth="351.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="encryptionTab" onSelectionChanged="#encryptionTab_OnSelectionChanged" text="ENCRYPT">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f1f1f1;">
+                     <children>
+                        <TextArea fx:id="outputText" editable="false" layoutY="201.0" prefHeight="140.0" prefWidth="351.0" promptText="Cipher Text Output (Read Only)" wrapText="true" />
+                        <TextArea fx:id="inputText" prefHeight="201.0" prefWidth="351.0" promptText="Plain Text" wrapText="true" />
+                        <Text fill="#9d9d9d" layoutX="12.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INPUT">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#9d9d9d" layoutX="12.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OUTPUT">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Text>
+                        <Pane layoutX="12.0" layoutY="30.0" opacity="0.35" prefHeight="1.0" prefWidth="326.0" style="-fx-background-color: #9d9d9d;" />
+                        <Pane layoutX="12.0" layoutY="233.0" opacity="0.35" prefHeight="1.0" prefWidth="326.0" style="-fx-background-color: #9d9d9d;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="decryptionTab" onSelectionChanged="#decryptionTab_OnSelectionChanged" text="DECRYPT">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #f1f1f1;">
+                     <children>
+                        <TextArea fx:id="outputTextDec" editable="false" layoutY="201.0" prefHeight="140.0" prefWidth="351.0" promptText="Plain Text Output (Read Only)" wrapText="true" />
+                        <TextArea fx:id="inputTextDec" prefHeight="201.0" prefWidth="351.0" promptText="Cipher Text" wrapText="true" />
+                        <Text fill="#9d9d9d" layoutX="12.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INPUT">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#9d9d9d" layoutX="12.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OUTPUT">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Text>
+                        <Pane layoutX="12.0" layoutY="30.0" opacity="0.35" prefHeight="1.0" prefWidth="326.0" style="-fx-background-color: #9d9d9d;" />
+                        <Pane layoutX="12.0" layoutY="233.0" opacity="0.35" prefHeight="1.0" prefWidth="326.0" style="-fx-background-color: #9d9d9d;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="setKey" cancelButton="true" layoutX="138.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#setKey_OnMouseClick" prefHeight="27.0" prefWidth="71.0" text="Set Key" />
+        <Button fx:id="finishButton" defaultButton="true" layoutX="217.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#finishButton_OnMouseClick" prefHeight="27.0" prefWidth="71.0" text="Encrypt" />
+    </children>
+    <effect>
+        <DropShadow color="#1457a4" />
+    </effect>
+</Pane>

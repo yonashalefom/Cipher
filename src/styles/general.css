@@ -1,0 +1,281 @@
+/*region Pagination Style*/
+.pagination {
+    -fx-padding: 0;
+    -fx-arrows-visible: true;
+    -fx-tooltip-visible: true;
+    -fx-page-information-visible: false;
+    -fx-page-information-alignment: bottom;
+    -fx-arrow-button-gap: 10;
+}
+
+.pagination > .page {
+    -fx-background-color: transparent;
+
+    /*-fx-background-color: #353535;*/
+}
+
+.pagination > .pagination-control .button {
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-border-color: transparent;
+    -fx-background-color: #ffffff;
+}
+
+.pagination > .pagination-control .left-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.375em 0.291em 0.375em 0.291em;
+    -fx-shape: "M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z";
+    -fx-scale-shape: true;
+    -fx-pref-height: 3px;
+}
+
+.pagination > .pagination-control .right-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.375em 0.291em 0.375em 0.291em;
+    -fx-shape: "M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z";
+    -fx-scale-shape: true;
+    -fx-pref-height: 3px;
+}
+
+.pagination.bullet > .pagination-control > .control-box {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+.pagination > .pagination-control > .control-box > .number-button {
+    -fx-background-radius: 0;
+    -fx-padding: 0.166667em 0.333em 0.25em 0.333em;
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+/*endregion*/
+/*region Text-Field Style*/
+.text-field, .text-area {
+    -fx-border-color: white;
+    -fx-padding: 5px 15px 5px 15px;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-opacity: 0.6;
+    -fx-text-fill: black;
+}
+
+/*endregion*/
+/*region Separator Style*/
+.separator:horizontal .line {
+    -fx-border-color: transparent transparent transparent transparent, #ffffff transparent transparent transparent;
+    -fx-border-insets: 0, 1 0 0 0;
+    -fx-opacity: 10%;
+}
+
+.separator:vertical .line {
+    -fx-border-color: transparent transparent transparent -fx-shadow-highlight-color,
+    transparent transparent transparent -fx-text-box-border;
+    -fx-border-width: 3, 1;
+    -fx-border-insets: 0, 0 0 0 1;
+}
+
+/*endregion*/
+#mainContainer {
+    -fx-background-image: url("wall-3.jpg");
+}
+
+#hillBack {
+    -fx-background-image: url("../images/hill_cipher_background.png");
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+}
+
+/*.button{*/
+/*-fx-min-width: 250px;*/
+/*-fx-min-height: 250px;*/
+/*-fx-background-radius: 100%;*/
+/*-fx-border-radius: 100%;*/
+/*}*/
+
+/*region EDITOR WINDOW*/
+/*region Tab Pane*/
+.tab-pane {
+    -fx-tab-min-height: 1.8333em; /* 22 */
+    -fx-tab-max-height: 1.8333em; /* 22 */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-background-color: transparent;
+    -fx-pref-width: 100px;
+    -fx-alignment: CENTER;
+    /*-fx-text-fill: derive(white, 40%);*/
+    -fx-text-fill: white;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {
+    -fx-background-color: transparent;
+    -fx-pref-width: 100px;
+    -fx-alignment: CENTER;
+    -fx-text-fill: #1457a4;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-insets: 0 1 1 0, 1 2 1 1, 2 3 1 2;
+    -fx-background-radius: 3 3 0 0, 2 2 0 0, 1 1 0 0;
+    -fx-padding: 0.5em 0.5em 0.5em 0.5em;
+
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:top {
+    -fx-background-color: #1457a4;
+
+}
+
+.tab-pane > .tab-header-area > .headers-region {
+    -fx-background-color: transparent;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-background;
+    -fx-background-insets: 0 1 1 0, 1 2 0 1, 2 3 0 2;
+    -fx-background-color: #cfcfcf;
+    -fx-border-color: #cfcfcf;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 1, 1;
+    -fx-border-color: transparent;
+    -fx-border-insets: -4 -4 -6 -5, -2 -2 -5 -3;
+    -fx-border-radius: 2, 1; /* looks sharper if outer border has a tighter radius (2 instead of 3) */
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    /* TODO should not be using text-box-border I think? */
+    -fx-background-color: -fx-outer-border,
+    -fx-text-box-border,
+    linear-gradient(from 0px 0px to 0px 5px, -fx-text-box-border, derive(-fx-text-box-border, 30%));
+    -fx-background-color: #1457a4;
+}
+
+/*endregion*/
+/*region Separator*/
+.separator:vertical .line {
+    -fx-border-color: transparent transparent transparent #bfbfbf,
+    transparent transparent transparent #dedede;
+    -fx-border-width: 3, 1;
+    -fx-border-insets: 0, 0 0 0 1;
+}
+
+/*endregion*/
+/*region text area*/
+.text-area {
+    -fx-padding: -10px;
+    -fx-cursor: default;
+    -fx-background-color: #dfdfdf;
+}
+
+.text-area > .scroll-pane {
+    -fx-padding: 15px 250px 0px 250px;
+    -fx-background-color: #dfdfdf;
+}
+
+#outputTextArea > .scroll-pane {
+    -fx-padding: 0;
+    -fx-background-color: #dfdfdf;
+}
+
+.text-area > .scroll-pane > .scroll-bar:horizontal {
+    -fx-background-radius: 0 0 2 2;
+}
+
+.text-area > .scroll-pane > .scroll-bar:vertical {
+    -fx-background-radius: 0 2 2 0;
+}
+
+.text-area > .scroll-pane > .corner {
+    -fx-background-radius: 0 0 2 0;
+}
+
+.text-area .content {
+    /*the is 1px less top and bottom than TextInput because of scrollpane border */
+    -fx-padding: 4.25em 2.583em 0.25em 4.583em; /* 3 7 3 7 */
+    -fx-cursor: text;
+    -fx-background-color: #efefef;
+    -fx-background-radius: 2;
+}
+
+#outputTextArea .content {
+    /*the is 1px less top and bottom than TextInput because of scrollpane border */
+    -fx-padding: 1.25em 1.583em 1.25em 1.583em; /* 3 7 3 7 */
+    -fx-cursor: text;
+    -fx-background-color: #cfcfcf;
+    -fx-background-radius: 2;
+}
+
+.text-area:focused .content {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0, 2;
+    -fx-background-radius: 2, 1, 0;
+}
+
+/*endregion*/
+/*region Scroll Pane*/
+.scroll-pane {
+    -fx-padding: 10px;
+}
+
+.scroll-bar {
+    -fx-background-radius: 25;
+    -fx-background-color: whitesmoke;
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 25;
+    -fx-background-radius: 25;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-color: transparent;
+    -fx-padding: 0.05em; /* 3px */
+    visibility: visible;
+}
+
+/*endregion*/
+/*region Pane*/
+
+/*endregion*/
+/*region Slider*/
+.slider .thumb {
+    -fx-background-color: #9a9a9a;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 1.0em; /* makes sure this remains circular */
+    -fx-padding: 0.583333em; /* 7 */
+    /*-fx-effect: dropshadow(two-pass-box , rgba(0, 0, 0, 0.1), 5, 0.0 , 0, 2);*/
+}
+
+.slider:focused .thumb {
+    -fx-background-radius: 1.0em; /* makes sure this remains circular */
+}
+
+.slider:focused:hover .thumb {
+    -fx-background-color: #4982cc;
+}
+
+.slider .track {
+    -fx-background-color: #c5c5c5;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0; /* 3 3 2 */
+    -fx-padding: 0.05em; /* 3 */
+}
+
+.slider .axis {
+    -fx-tick-label-fill: derive(-fx-text-background-color, 30%);
+    -fx-tick-length: 5px;
+    -fx-minor-tick-length: 3px;
+    -fx-border-color: null;
+}
+
+/*endregion*/
+
+/*endregion*/

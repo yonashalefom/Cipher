@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="600.0" style="-fx-background-color: #cfcfcf; -fx-border-radius: 25px; -fx-background-radius: 25px;" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutY="140.0" prefHeight="176.0" prefWidth="600.0" style="-fx-background-color: #1457a4;">
+         <children>
+            <Label layoutX="27.0" layoutY="14.0" text="HLIL CIPHER" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="462.0" layoutY="14.0" text="BY LESTER S. HILL" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TabPane layoutY="275.0" prefHeight="510.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="ABOUT">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #cfcfcf;">
+                     <children>
+                        <Label layoutX="30.0" layoutY="21.0" text="HLIL CIPHER" textFill="#838383">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="30.0" layoutY="45.0" prefHeight="7.0" prefWidth="536.0" style="-fx-background-color: #bfbfbf;" />
+                        <VBox layoutX="72.0" layoutY="63.0" prefHeight="373.0" prefWidth="406.0">
+                           <children>
+                              <Label prefHeight="49.0" prefWidth="470.0" text="In classical cryptography, the Hill cipher is a polygraphic substitution cipher based on linear algebra." textFill="#838383" wrapText="true" />
+                              <Label prefHeight="35.0" prefWidth="454.0" text="Invented by Lester S. Hill in 1929." textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="59.0" prefHeight="45.0" prefWidth="454.0" text="it was the first polygraphic cipher in which it was practical (though barely) to operate on more than three symbols at once." textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="94.0" prefHeight="37.0" prefWidth="406.0" text="U.S. patent number 1845947 from 1929." textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="139.0" prefHeight="37.0" prefWidth="406.0" text="Linear Transformation of the digitized alphabet." textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="176.0" prefHeight="37.0" prefWidth="406.0" text="The First Device were ENIAC. Mechanical device: 6 × 6 matrix." textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="213.0" prefHeight="46.0" prefWidth="406.0" text="ENIAC method is vulnerable to those that intercept enough vectorcorrespondances (uncoded and coded) because of itslinearity." textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="250.0" prefHeight="31.0" prefWidth="406.0" text="It was the base for some of the modern encryption algorithms" textFill="#838383" wrapText="true" />
+                              <Label layoutX="10.0" layoutY="296.0" prefHeight="24.0" prefWidth="406.0" text="It is not applicable at this time but it is used for teaching purposes." textFill="#838383" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <Pane layoutX="30.0" layoutY="448.0" prefHeight="7.0" prefWidth="536.0" style="-fx-background-color: #bfbfbf;" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="HOW IT WORKS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #cfcfcf;" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@hillCircular.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <DropShadow color="#1457a4" />
+   </effect>
+</Pane>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1200.0" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.general.EditorPageController">
+   <children>
+      <Pane id="mianEditorContainer" layoutY="190.0" prefHeight="455.0" prefWidth="1200.0" style="-fx-background-color: #dfdfdf;" stylesheets="@../styles/general.css">
+         <children>
+            <TextArea id="EditorTextArea" fx:id="mainEditor" layoutX="9.0" layoutY="8.0" onKeyTyped="#mainEditor_OnFocus" onMouseClicked="#mainEditor_OnFocus" prefHeight="411.0" prefWidth="1164.0" style="-fx-background-color: #dfdfdf;" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
+            <Pane fx:id="outputWindow" layoutY="179.0" prefHeight="249.0" prefWidth="1200.0" style="-fx-background-color: #cfcfcf; -fx-border-color: #c5c5c5;">
+               <children>
+                  <TextArea id="outputTextArea" fx:id="outputWindowTextArea" editable="false" layoutY="50.0" prefHeight="179.0" prefWidth="1186.0" promptText="Output" wrapText="true" />
+                  <Pane prefHeight="40.0" prefWidth="1200.0" style="-fx-background-color: #c5c5c5;">
+                     <children>
+                        <Pane id="menuItem2" fx:id="outputCopy" layoutX="14.0" layoutY="5.0" onMouseClicked="#outputCopy_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #cfcfcf; -fx-background-radius: 100%;">
+                           <children>
+                              <SVGPath content="M149.997,0C67.156,0,0,67.156,0,149.997s67.156,149.997,149.997,149.997s149.997-67.156,149.997-149.997S232.839,0,149.997,0z M201.641,211.953v18.225c0,10.066-8.159,18.225-18.22,18.225H85.453c-10.066,0-18.225-8.159-18.225-18.225V95.763c0-10.066,8.157-18.225,18.225-18.225h97.967c10.066,0,18.223,8.159,18.22,18.228c0.001,0,0.001,18.222,0.001,18.222V211.953z M224.986,188.61v18.217c0,8.237-5.467,15.193-12.971,17.45v-12.325v-97.967V95.763c0-15.769-12.828-28.599-28.594-28.599H91.349c2.259-7.503,9.21-12.971,17.45-12.971h97.967c10.061,0,18.22,8.162,18.217,18.228v18.223h0.003V188.61z" fill="#cc6c6c" layoutX="-135.0" layoutY="-135.0" scaleX="0.05" scaleY="0.05" />
+                           </children>
+                        </Pane>
+                        <Pane id="menuItem2" fx:id="outputSave" layoutX="98.0" layoutY="5.0" onMouseClicked="#outputSave_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #cfcfcf; -fx-background-radius: 100%;">
+                           <children>
+                              <SVGPath content="M149.995,0C67.156,0,0,67.159,0,149.997c0,82.837,67.156,150,149.995,150s150.003-67.163,150.003-150C299.997,67.159,232.834,0,149.995,0z M185.688,64.565l31.517,28.669h-31.517V64.565z M170.775,214.576v16.41v4.445h-69.76c-10.068,0-18.225-8.159-18.225-18.225V82.79c0-10.066,8.159-18.225,18.225-18.225h76.889v36.45h39.298v79.763h-12.628H194.2v0.01h-90.887v10.374h90.89v12.639h-90.89v10.374h67.462V214.576z M244.409,230.987h-23.425v23.425h-16.407v-23.425h-23.428v-16.41h23.428v-23.425h16.407v23.425h23.425C244.409,214.578,244.409,230.987,244.409,230.987z" fill="#cc6c6c" layoutX="-135.0" layoutY="-135.0" scaleX="0.05" scaleY="0.05" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="51.0" layoutY="12.0" onMouseClicked="#outputCopy_OnMouseClick" text="COPY" textFill="#967288" />
+                        <Label layoutX="135.0" layoutY="12.0" onMouseClicked="#outputSave_OnMouseClick" text="SAVE" textFill="#967288" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutY="428.0" onMouseClicked="#outputWindowOpener_OnMouseClick" prefHeight="29.0" prefWidth="1200.0" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+               <children>
+                  <Slider fx:id="zoomSlider" layoutX="1036.0" layoutY="7.0" max="51.0" min="15.0" onMouseDragged="#zoomSlider_Handler" onScroll="#zoomSlider_Handler" />
+                  <SVGPath fx:id="outputWindowOpener" content="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#9a9a9a" layoutX="977.0" layoutY="2.0" rotate="90.0" />
+                  <Pane layoutX="1014.0" layoutY="2.0" prefHeight="22.0" prefWidth="1.0" style="-fx-background-color: #c1c1c1;" />
+               </children></Pane>
+         </children>
+      </Pane>
+      <Pane prefHeight="139.0" prefWidth="1200.0" style="-fx-background-color: #1457a4;" stylesheets="@../styles/general.css">
+         <children>
+            <SVGPath fx:id="toHomeIcon" content="M23.856,1.451l10.984,10.222l10.984,10.222c0.444,0.429,0.476,1.127,0.063,1.587c-0.222,0.238-0.524,0.349-0.825,0.349v0.016h-5.555V43.91c0,0.619-0.508,1.127-1.127,1.127h-8.746c-0.619,0-1.111-0.508-1.111-1.127V28.482H17.666V43.91c0,0.619-0.508,1.127-1.127,1.127H7.793c-0.619,0-1.111-0.508-1.111-1.127V23.847H1.111C0.492,23.847,0,23.34,0,22.721c0-0.349,0.159-0.667,0.413-0.873l10.936-10.174L22.332,1.435C22.761,1.039,23.427,1.039,23.856,1.451L23.856,1.451z M33.316,13.308L23.094,3.785l-10.222,9.524l-8.904,8.286h3.825c0.619,0,1.127,0.508,1.127,1.127v20.063h6.508V27.371c0-0.619,0.492-1.127,1.111-1.127h13.095c0.619,0,1.127,0.508,1.127,1.127v15.412h6.508V22.721c0-0.619,0.492-1.127,1.111-1.127h3.841L33.316,13.308z" fill="WHITE" layoutX="2.0" layoutY="2.0" onMouseClicked="#toHomeIcon_OnMouseClick" pickOnBounds="true" scaleX="0.4" scaleY="0.4" />
+            <TabPane layoutY="45.0" prefHeight="145.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabHome" closable="false" text="FILE">
+                     <content>
+                        <Pane prefHeight="82.0" prefWidth="1200.0" style="-fx-background-color: #cfcfcf;">
+                           <children>
+                              <Pane id="m_item1" fx:id="openFile" layoutX="26.0" layoutY="22.0" onMouseClicked="#openFile_OnMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 100%; -fx-background-color: #bfbfbf;" styleClass="pane">
+                                 <children>
+                                    <SVGPath content="M207.597,115.365h-71.22l-18.759-17.029H85.649c-2.446,0-4.435,1.989-4.435,4.432v108.899c0,2.443,1.989,4.432,4.435,4.432h3.369l17.688-91.03h105.32v-5.27C212.027,117.357,210.038,115.365,207.597,115.365zM149.996,0C67.157,0,0.001,67.161,0.001,149.997S67.157,300,149.996,300s150.003-67.163,150.003-150.003S232.835,0,149.996,0z M227.241,212.721c-0.542,10.333-8.948,18.601-19.343,18.912c-0.101,0.005-0.197,0.031-0.301,0.031l-9.231,0.005l-112.72-0.005c-11.023,0-19.991-8.969-19.991-19.994V102.768c0-11.025,8.969-19.994,19.997-19.994h37.975l18.759,17.029h65.211c11.023,0,19.991,8.969,19.991,19.997v5.27l17.904,0.003L227.241,212.721z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="99.0" layoutY="44.0" onMouseClicked="#openFile_OnMouseClick" text="OPEN" textFill="#797474" />
+                              <Separator layoutX="147.0" layoutY="15.0" orientation="VERTICAL" prefHeight="74.0" prefWidth="5.0" />
+                              <Pane id="menuItem2" fx:id="copyText" layoutX="168.0" layoutY="18.0" onMouseClicked="#copyText_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M149.997,0C67.156,0,0,67.156,0,149.997s67.156,149.997,149.997,149.997s149.997-67.156,149.997-149.997S232.839,0,149.997,0z M201.641,211.953v18.225c0,10.066-8.159,18.225-18.22,18.225H85.453c-10.066,0-18.225-8.159-18.225-18.225V95.763c0-10.066,8.157-18.225,18.225-18.225h97.967c10.066,0,18.223,8.159,18.22,18.228c0.001,0,0.001,18.222,0.001,18.222V211.953z M224.986,188.61v18.217c0,8.237-5.467,15.193-12.971,17.45v-12.325v-97.967V95.763c0-15.769-12.828-28.599-28.594-28.599H91.349c2.259-7.503,9.21-12.971,17.45-12.971h97.967c10.061,0,18.22,8.162,18.217,18.228v18.223h0.003V188.61z" fill="#4982cc" layoutX="-135.0" layoutY="-135.0" scaleX="0.08" scaleY="0.08" />
+                                 </children>
+                              </Pane>
+                              <Pane id="menuItem3" fx:id="pasteText" layoutX="263.0" layoutY="17.0" onMouseClicked="#pasteText_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M149.995,0.001C67.156,0.001,0,67.16,0,149.999s67.156,149.997,149.995,149.997s150.003-67.161,150.003-149.997C299.997,67.157,232.834,0.001,149.995,0.001z M217.205,217.204c0,10.066-8.159,18.225-18.223,18.225h-97.967c-10.068,0-18.225-8.159-18.225-18.225V82.79c0-10.066,8.159-18.225,18.225-18.225h76.892v36.45h39.298V217.204z M185.688,93.232V64.563l31.517,28.669H185.688z" fill="#4982cc" layoutX="-135.0" layoutY="-135.0" scaleX="0.08" scaleY="0.08" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="208.0" layoutY="25.0" onMouseClicked="#copyText_OnMouseClick" text="COPY" textFill="#797474" />
+                              <Label layoutX="303.0" layoutY="24.0" onMouseClicked="#pasteText_OnMouseClick" text="PASTE" textFill="#797474" />
+                              <Separator layoutX="355.0" layoutY="17.0" orientation="VERTICAL" prefHeight="74.0" prefWidth="5.0" />
+                              <Pane id="menuItem4" fx:id="cutText" layoutX="168.0" layoutY="57.0" onMouseClicked="#cutText_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <Pane id="menuItem4" fx:id="editText1" layoutX="3.0" layoutY="3.0" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #4982cc; -fx-background-radius: 100%;">
+                                       <children>
+                                          <SVGPath content="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z" fill="#bfbfbf" scaleX="0.7" scaleY="0.7" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Pane id="menuItem5" fx:id="editText" layoutX="263.0" layoutY="56.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M149.995,0.001C67.156,0.001,0,67.16,0,149.999s67.156,149.997,149.995,149.997s150.003-67.161,150.003-149.997C299.997,67.157,232.834,0.001,149.995,0.001z M217.205,217.204c0,10.066-8.159,18.225-18.223,18.225h-97.967c-10.068,0-18.225-8.159-18.225-18.225V82.79c0-10.066,8.159-18.225,18.225-18.225h76.892v36.45h39.298V217.204z M185.688,93.232V64.563l31.517,28.669H185.688z" fill="#4982cc" layoutX="-135.0" layoutY="-135.0" scaleX="0.08" scaleY="0.08" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="208.0" layoutY="64.0" onMouseClicked="#cutText_OnMouseClick" text="CUT" textFill="#797474" />
+                              <Label layoutX="303.0" layoutY="63.0" text="PASTE" textFill="#797474" />
+                              <Pane id="menuItem6" fx:id="zoomIn" layoutX="372.0" layoutY="17.0" onMouseClicked="#zoomIn_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M139.414,96.193c-22.673,0-41.056,18.389-41.056,41.062c0,22.678,18.383,41.062,41.056,41.062c22.678,0,41.059-18.383,41.059-41.062C180.474,114.582,162.094,96.193,139.414,96.193z M159.255,146.971h-12.06v12.06c0,4.298-3.483,7.781-7.781,7.781c-4.298,0-7.781-3.483-7.781-7.781v-12.06h-12.06c-4.298,0-7.781-3.483-7.781-7.781c0-4.298,3.483-7.781,7.781-7.781h12.06v-12.063c0-4.298,3.483-7.781,7.781-7.781c4.298,0,7.781,3.483,7.781,7.781v12.063h12.06c4.298,0,7.781,3.483,7.781,7.781C167.036,143.488,163.555,146.971,159.255,146.971zM149.997,0C67.157,0,0.001,67.158,0.001,149.995s67.156,150.003,149.995,150.003s150-67.163,150-150.003S232.836,0,149.997,0z M225.438,221.254c-2.371,2.376-5.48,3.561-8.59,3.561s-6.217-1.185-8.593-3.561l-34.145-34.147c-9.837,6.863-21.794,10.896-34.697,10.896c-33.548,0-60.742-27.196-60.742-60.744c0-33.548,27.194-60.742,60.742-60.742c33.548,0,60.744,27.194,60.744,60.739c0,11.855-3.408,22.909-9.28,32.256l34.56,34.562C230.185,208.817,230.185,216.512,225.438,221.254z" fill="#4982cc" layoutX="-135.0" layoutY="-135.0" scaleX="0.08" scaleY="0.08" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="412.0" layoutY="23.0" onMouseClicked="#zoomIn_OnMouseClick" text="ZOOM IN" textFill="#797474" />
+                              <Pane id="menuItem7" fx:id="zoomOut" layoutX="372.0" layoutY="57.0" onMouseClicked="#setZoomOut_OnMouseClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M139.415,96.195c-22.673,0-41.056,18.389-41.056,41.062c0,22.676,18.383,41.059,41.056,41.059c7.446,0,14.41-2.01,20.43-5.478c2.625-1.511,5.06-3.308,7.275-5.342c0.08-0.073,0.163-0.145,0.241-0.218c0.705-0.659,1.393-1.343,2.052-2.049c0.036-0.039,0.07-0.078,0.106-0.117c2.754-2.977,5.073-6.367,6.86-10.068c2.596-5.387,4.095-11.404,4.095-17.787C180.474,114.584,162.093,96.195,139.415,96.195z M159.256,146.973h-39.684c-4.298,0-7.781-3.483-7.781-7.781c0-4.298,3.483-7.781,7.781-7.781h39.684c4.298,0,7.781,3.483,7.781,7.781C167.037,143.49,163.554,146.973,159.256,146.973zM149.995,0C67.156,0,0,67.158,0,149.995s67.156,150,149.995,150s150-67.163,150-150S232.834,0,149.995,0z M225.437,221.254c-2.371,2.376-5.48,3.561-8.59,3.561c-3.11,0-6.217-1.185-8.593-3.561l-34.145-34.147c-9.837,6.863-21.791,10.896-34.697,10.896c-33.548,0-60.742-27.196-60.742-60.744c0-33.548,27.194-60.742,60.742-60.742c33.548,0,60.744,27.194,60.744,60.742c0,11.855-3.408,22.909-9.28,32.259l34.56,34.56C230.183,208.817,230.183,216.512,225.437,221.254z" fill="#4982cc" layoutX="-135.0" layoutY="-135.0" scaleX="0.08" scaleY="0.08" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="412.0" layoutY="64.0" onMouseClicked="#setZoomOut_OnMouseClick" text="ZOOM OUT" textFill="#797474" />
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+                <Tab fx:id="tabEncryption" closable="false" text="ENCRYPTION">
+                     <content>
+                        <Pane prefHeight="68.0" prefWidth="1200.0" style="-fx-background-color: #cfcfcf;">
+                           <children>
+                              <Pane id="menuItem8" fx:id="encryptMessage" layoutX="26.0" layoutY="22.0" onMouseClicked="#encryptMessage_OnMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M149.997,161.485c-8.613,0-15.598,6.982-15.598,15.598c0,5.776,3.149,10.807,7.817,13.505v17.341h15.562v-17.341c4.668-2.697,7.817-7.729,7.817-13.505C165.595,168.467,158.611,161.485,149.997,161.485zM150.003,85.849c-13.111,0-23.775,10.665-23.775,23.775v25.319h47.548v-25.319C173.775,96.516,163.111,85.849,150.003,85.849zM149.995,0.001C67.156,0.001,0,67.159,0,149.998c0,82.837,67.156,149.997,149.995,149.997s150-67.161,150-149.997C299.995,67.159,232.834,0.001,149.995,0.001z M196.085,227.118h-92.173c-9.734,0-17.626-7.892-17.626-17.629v-56.919c0-8.491,6.007-15.582,14.003-17.25v-25.697c0-27.409,22.3-49.711,49.711-49.711c27.409,0,49.709,22.3,49.709,49.711v25.697c7.993,1.673,14,8.759,14,17.25v56.919h0.002C213.711,219.225,205.819,227.118,196.085,227.118z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="99.0" layoutY="44.0" onMouseClicked="#encryptMessage_OnMouseClick" text="ENCRYPT" textFill="#797474" />
+                              <Pane id="menuItem9" fx:id="decryptMessage" layoutX="174.0" layoutY="22.0" onMouseClicked="#decryptMessage_OmMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M134.437,161.482c-8.613,0-15.598,6.982-15.598,15.598c0,5.778,3.149,10.807,7.817,13.502v17.346h15.562v-17.346c4.668-2.695,7.817-7.726,7.817-13.502C150.035,168.464,143.05,161.482,134.437,161.482zM149.996,0C67.157,0,0.001,67.158,0.001,149.997c0,82.837,67.156,150,149.995,150s150-67.163,150-150C299.996,67.156,232.835,0,149.996,0z M252.943,134.436h-25.936v-27.915c0-13.108-10.665-23.775-23.773-23.775c-13.111,0-23.775,10.665-23.775,23.775v25.321h1.063c9.734,0,17.626,7.892,17.626,17.629v56.921c0,9.736-7.892,17.629-17.626,17.629H88.349c-9.734,0-17.626-7.892-17.626-17.629v-56.924c0-9.736,7.892-17.629,17.626-17.629h65.174V106.52c0-27.409,22.302-49.711,49.711-49.711s49.709,22.3,49.709,49.711V134.436z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="247.0" layoutY="44.0" onMouseClicked="#decryptMessage_OmMouseClick" text="DECRYPT" textFill="#797474" />
+                              <Separator layoutX="319.0" layoutY="17.0" orientation="VERTICAL" prefHeight="74.0" prefWidth="5.0" />
+                              <Pane id="menuItem10" fx:id="checkEncryption" layoutX="346.0" layoutY="22.0" onMouseClicked="#check_OnMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M150,225.105c39.749,0,58.545-40.546,67.35-75.105H150V225.105zM82.681,149.992H150v-74.43l-74.527,31.717C76.179,115.404,78.057,131.876,82.681,149.992zM149.997,0C67.158,0,0.003,67.161,0.003,149.997S67.158,300,149.997,300s150-67.163,150-150.003S232.837,0,149.997,0z M240.454,102.62c-0.236,5.636-6.774,138.046-90.454,138.046c-83.682,0-90.22-132.408-90.456-138.046l-0.226-5.379l90.68-38.593l90.685,38.593L240.454,102.62z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="417.0" layoutY="44.0" onMouseClicked="#check_OnMouseClick" text="REVIEW" textFill="#797474" />
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="tabCurrentCipher" closable="false" text="HILL CIPHER">
+                     <content>
+                        <Pane prefHeight="68.0" prefWidth="1200.0" style="-fx-background-color: #cfcfcf;">
+                           <children>
+                              <Pane id="m_item1" fx:id="setEncryptionKey" layoutX="26.0" layoutY="22.0" onMouseClicked="#setEncryptionKey_OmMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 100%; -fx-background-color: #bfbfbf;" styleClass="pane">
+                                 <children>
+                                    <Pane id="m_item1" fx:id="setEncryptionKey1" layoutX="3.0" layoutY="3.0" prefHeight="54.0" prefWidth="54.0" style="-fx-background-radius: 100%; -fx-background-color: #4982cc;" styleClass="pane" />
+                                    <SVGPath content="M214.002,246c-4.143,0-7.5-3.357-7.5-7.5s3.357-7.5,7.5-7.5h16.416v-18c0-8.284-6.133-15-14.416-15h-37.584v81h37.584c8.283,0,14.416-6.716,14.416-15v-18H214.002zM163.418,118c0-0.338,0.555-0.668,0.533-1H172c32.258,0,58.5-26.243,58.5-58.5S204.258,0,172,0h-47C92.744,0,66.5,26.243,66.5,58.5S92.744,117,125,117h9.053c-0.023,0.332-0.635,0.662-0.635,1v164c0,8.284,6.715,15,15,15c8.283,0,15-6.716,15-15V118z M96.5,58.5C96.5,42.785,109.285,30,125,30h47c15.715,0,28.5,12.785,28.5,28.5S187.715,87,172,87h-47C109.285,87,96.5,74.215,96.5,58.5z" fill="#bfbfbf" layoutX="-18.0" layoutY="-19.0" rotate="90.0" scaleX="0.12" scaleY="0.12" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="99.0" layoutY="44.0" onMouseClicked="#setEncryptionKey_OmMouseClick" text="SET KEY" textFill="#797474" />
+                              <Separator layoutX="160.0" layoutY="16.0" orientation="VERTICAL" prefHeight="74.0" prefWidth="5.0" />
+                              <Pane id="m_item1" layoutX="181.0" layoutY="22.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 100%; -fx-background-color: #bfbfbf;" styleClass="pane">
+                                 <children>
+                                    <SVGPath content="M150,225.105c39.749,0,58.545-40.546,67.35-75.105H150V225.105zM82.681,149.992H150v-74.43l-74.527,31.717C76.179,115.404,78.057,131.876,82.681,149.992zM149.997,0C67.158,0,0.003,67.161,0.003,149.997S67.158,300,149.997,300s150-67.163,150-150.003S232.837,0,149.997,0z M240.454,102.62c-0.236,5.636-6.774,138.046-90.454,138.046c-83.682,0-90.22-132.408-90.456-138.046l-0.226-5.379l90.68-38.593l90.685,38.593L240.454,102.62z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="255.0" layoutY="44.0" text="HELP" textFill="#797474" />
+                           </children></Pane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="exportTab" closable="false" text="EXPORT">
+                     <content>
+                        <Pane prefHeight="68.0" prefWidth="1200.0" style="-fx-background-color: #cfcfcf;">
+                           <children>
+                              <Pane id="menuItem8" fx:id="encryptMessage1" layoutX="26.0" layoutY="22.0" onMouseClicked="#setEncryptionKey_OmMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M149.997,0.003C67.156,0.003,0,67.161,0,150s67.156,149.997,149.997,149.997C232.834,299.997,300,232.837,300,150C300,67.158,232.834,0.003,149.997,0.003z M110.967,81.483l31.712-31.709c2.077-2.075,4.79-3.105,7.506-3.105c0.026,0,0.054,0,0.078,0c0.029,0,0.054,0,0.078,0c2.715,0,5.434,1.03,7.511,3.105l31.707,31.709c4.15,4.147,4.15,10.872,0,15.017c-2.072,2.075-4.793,3.112-7.508,3.112c-2.721,0-5.436-1.037-7.508-3.112l-14.016-14.013v32.259v20.749v3.888c0,5.867-4.757,10.621-10.623,10.621c-5.867,0-10.618-4.754-10.618-10.621v-3.888v-20.749V83.207l-13.297,13.295c-2.077,2.075-4.793,3.112-7.508,3.112c-2.721,0-5.436-1.037-7.511-3.112C106.819,92.355,106.819,85.627,110.967,81.483z M231.576,209.318h-0.003c0,14.335-14.057,25.565-32.005,25.565h-99.132c-17.945,0-32.005-11.23-32.005-25.565V140.31c0-14.337,14.057-25.568,32.005-25.568h13.385c1.522,0.272,3.079,0.431,4.658,0.431c1.569,0,3.115-0.161,4.63-0.431h0.612v20.749h-23.285c-7.265,0-11.256,3.621-11.256,4.819v69.008c0,1.198,3.992,4.816,11.256,4.816h99.135c7.265,0,11.256-3.621,11.256-4.816V140.31c0-1.198-3.992-4.819-11.256-4.819h-23.485v-20.749h1.437c1.481,0.257,2.988,0.431,4.526,0.431c1.579,0,3.133-0.158,4.658-0.431h12.864c17.948,0,32.005,11.233,32.005,25.568V209.318z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="99.0" layoutY="44.0" text="EXPORT" textFill="#797474" />
+                              <Pane id="menuItem9" fx:id="decryptMessage1" layoutX="174.0" layoutY="22.0" onMouseClicked="#decryptMessage_OmMouseClick" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #bfbfbf; -fx-background-radius: 100%;">
+                                 <children>
+                                    <SVGPath content="M149.996,0C67.157,0,0.001,67.158,0.001,149.997c0,82.837,67.156,150,149.995,150s150-67.163,150-150C299.996,67.158,232.835,0,149.996,0z M149.999,52.686l88.763,55.35H61.236L149.999,52.686z M239.868,196.423h-0.009c0,8.878-7.195,16.072-16.072,16.072H76.211c-8.878,0-16.072-7.195-16.072-16.072v-84.865c0-0.939,0.096-1.852,0.252-2.749l84.808,52.883c0.104,0.065,0.215,0.109,0.322,0.169c0.112,0.062,0.226,0.122,0.34,0.179c0.599,0.309,1.216,0.558,1.847,0.721c0.065,0.018,0.13,0.026,0.195,0.041c0.692,0.163,1.393,0.265,2.093,0.265h0.005c0.005,0,0.01,0,0.01,0c0.7,0,1.401-0.099,2.093-0.265c0.065-0.016,0.13-0.023,0.195-0.041c0.63-0.163,1.245-0.412,1.847-0.721c0.114-0.057,0.228-0.117,0.34-0.179c0.106-0.06,0.218-0.104,0.322-0.169l84.808-52.883c0.156,0.897,0.252,1.808,0.252,2.749V196.423z" fill="#4982cc" layoutX="-20.0" layoutY="-20.0" scaleX="0.18" scaleY="0.18" translateX="-100.0" translateY="-100.0" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="247.0" layoutY="44.0" text="MAIL" textFill="#797474" />
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TextAreaController">
+   <children>
+      <TextArea fx:id="textArea" layoutX="64.0" prefHeight="788.0" prefWidth="573.0" />
+      <ListView fx:id="numberBar" prefHeight="788.0" prefWidth="65.0" />
+   </children>
+</Pane>

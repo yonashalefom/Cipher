@@ -1,0 +1,178 @@
+.text-field, .text-area{
+    -fx-start-margin: auto;
+    -fx-border-color: #cfcfcf;
+    -fx-padding: 5px 15px 5px 15px;
+    -fx-background-color: #dfdfdf;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 100%;
+    -fx-opacity: 0.6;
+    -fx-text-fill: black;
+}
+
+.button{
+    -fx-background-color:  #dfdfdf;
+    -fx-padding: 5px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+
+
+
+
+
+
+
+.spinner {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: white;
+    /*-fx-padding: 0px 10px 0px 10px;*/
+}
+.spinner:focused, .spinner:contains-focus {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: white;
+}
+.spinner > .text-field {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 1 0 1 1;
+    -fx-background-radius: 25px;
+    -fx-border-color: transparent;
+
+}
+.spinner:focused > .text-field,
+.spinner:contains-focus > .text-field {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 1 0 1 1;
+    -fx-background-radius: 25px;
+    -fx-border-color: transparent;
+}
+
+.spinner .increment-arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 -1 0, 1 1 0 1, 2 2 1 2;
+    -fx-background-radius: 0 3 0 0, 0 2 0 0, 0 1 0 0;
+    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;
+}
+.spinner .decrement-arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1 1 1 1, 1 2 2 2;
+    -fx-background-radius: 0 0 3 0, 0 0 2 0, 0 0 1 0;
+    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;  /* 3 8 5 8 */
+}
+.spinner:focused .increment-arrow-button,
+.spinner:contains-focus .increment-arrow-button,
+.spinner:focused .decrement-arrow-button,
+.spinner:contains-focus .decrement-arrow-button {
+    -fx-background-color: transparent;
+}
+
+.spinner .increment-arrow-button .increment-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 0 0 -1 0, 0;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em;  /* 2 4 2 4 */
+    -fx-shape: "M 0 4 h 7 l -3.5 -4 z";
+}
+.spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 0 0 -1 0, 0;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; /* 2 4 2 4 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+/* Spinner - Horizontal arrows */
+.spinner.split-arrows-horizontal .increment-arrow-button .increment-arrow,
+.spinner.arrows-on-right-horizontal .increment-arrow-button .increment-arrow,
+.spinner.arrows-on-left-horizontal .increment-arrow-button .increment-arrow {
+    -fx-padding: 0.333333em 0.166667em 0.333333em 0.166667em; /* 4 2 4 2 */
+    -fx-shape: "M 0 0 v 7 l 3.5 -4 z";
+}
+.spinner.split-arrows-horizontal .decrement-arrow-button .decrement-arrow,
+.spinner.arrows-on-right-horizontal .decrement-arrow-button .decrement-arrow,
+.spinner.arrows-on-left-horizontal .decrement-arrow-button .decrement-arrow {
+    -fx-padding: 0.333333em 0.166667em 0.333333em 0.166667em; /* 4 2 4 2 */
+    -fx-shape: "M 4 0 v 7 l -4 -3.5 z";
+}
+
+/* Spinner - STYLE_CLASS_ARROWS_ON_RIGHT_HORIZONTAL */
+.spinner.arrows-on-right-horizontal .increment-arrow-button {
+    -fx-background-radius: 0 3 3 0, 0 2 2 0, 0 1 1 0;
+    -fx-background-insets: 0 0 0 -1, 1 1 1 0, 2 2 2 1;
+}
+.spinner.arrows-on-right-horizontal .decrement-arrow-button {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 1, 2;
+}
+
+/* Spinner - STYLE_CLASS_ARROWS_ON_LEFT_VERTICAL */
+.spinner.arrows-on-left-vertical > .text-field {
+    -fx-background-insets: 0, 1 1 1 0;
+    -fx-background-radius: 0 3 3 0, 0 2 2 0;
+}
+.spinner.arrows-on-left-vertical .increment-arrow-button {
+    -fx-background-radius: 3 0 0 0, 2 0 0 0, 1 0 0 0;
+}
+.spinner.arrows-on-left-vertical .decrement-arrow-button {
+    -fx-background-radius: 0 0 0 3, 0 0 0 2, 0 0 0 1;
+}
+
+/* Spinner - STYLE_CLASS_ARROWS_ON_LEFT_HORIZONTAL */
+.spinner.arrows-on-left-horizontal > .text-field {
+    -fx-background-insets: 0, 1 1 1 0;
+    -fx-background-radius: 0 3 3 0, 0 2 2 0;
+}
+.spinner.arrows-on-left-horizontal .increment-arrow-button {
+    -fx-background-insets: 0 0 0 -1, 1 1 1 0, 2 2 2 1;
+    -fx-background-radius: 0;
+}
+.spinner.arrows-on-left-horizontal .decrement-arrow-button {
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3 0 0 3, 2 0 0 2, 1 0 0 1;
+}
+.spinner.arrows-on-left-vertical:focused > .text-field,
+.spinner.arrows-on-left-vertical:contains-focus > .text-field,
+.spinner.arrows-on-left-horizontal:focused > .text-field,
+.spinner.arrows-on-left-horizontal:contains-focus > .text-field {
+    -fx-background-insets: 1 1 1 0, 1 1 1 0, 3 3 3 2;
+}
+
+/* Spinner - STYLE_CLASS_SPLIT_ARROWS_VERTICAL */
+.spinner.split-arrows-vertical > .text-field {
+    -fx-background-insets: 0, 0 1 0 1;
+    -fx-background-radius: 0, 0;
+}
+.spinner.split-arrows-vertical .increment-arrow-button {
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3 3 0 0, 2 2 0 0, 1 1 0 0;
+}
+.spinner.split-arrows-vertical .decrement-arrow-button {
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 0 3 3, 0 0 2 2, 0 0 1 1;
+}
+.spinner.split-arrows-vertical:focused > .text-field,
+.spinner.split-arrows-vertical:contains-focus > .text-field {
+    -fx-background-insets: 0 1 0 1, 0 1 0 1, 2 3 2 3;
+}
+
+/* Spinner - STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL */
+.spinner.split-arrows-horizontal > .text-field {
+    -fx-background-insets: 0, 1 0 1 0;
+    -fx-background-radius: 0, 0;
+}
+.spinner.split-arrows-horizontal .increment-arrow-button {
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 3 3 0, 0 2 2 0, 0 1 1 0;
+}
+.spinner.split-arrows-horizontal .decrement-arrow-button {
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3 0 0 3, 2 0 0 2, 1 0 0 1;
+}
+.spinner.split-arrows-horizontal:focused > .text-field,
+.spinner.split-arrows-horizontal:contains-focus > .text-field {
+    -fx-background-insets: 1 0 1 0, 1 0 1 0, 3 2 3 2;
+}
